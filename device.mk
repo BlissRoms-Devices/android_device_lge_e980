@@ -34,6 +34,9 @@ PRODUCT_PACKAGES += \
 	lights.geefhd \
 	camera.geefhd
 
+PRODUCT_PACKAGES += \
+	hostapd_default.conf \
+
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/mixer_paths.xml:system/etc/mixer_paths.xml
 
