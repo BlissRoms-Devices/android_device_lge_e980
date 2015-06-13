@@ -56,6 +56,9 @@ MALLOC_IMPL := dlmalloc
 
 COMMON_GLOBAL_CFLAGS += -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
 
+BOARD_SEPOLICY_DIRS += \
+        device/lge/e980/sepolicy
+
 # BlissPop Configs
 TARGET_TC_ROM := 4.8-linaro
 TARGET_TC_KERNEL := 4.8-linaro
