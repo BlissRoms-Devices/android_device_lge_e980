@@ -58,6 +58,13 @@ COMMON_GLOBAL_CFLAGS += -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' -DBOA
 
 BOARD_SEPOLICY_DIRS += \
         device/lge/e980/sepolicy
+		
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+  ifeq ($(WITH_DEXPREOPT),)
+    WITH_DEXPREOPT := true
+  endif
+endif
 
 # BlissPop Configs
 TARGET_TC_ROM := 4.8-linaro
