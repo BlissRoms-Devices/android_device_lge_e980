@@ -20,7 +20,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/lge/e980/include
 
 BOARD_KERNEL_CMDLINE := vmalloc=600M console=ttyHSL0,115200,n8 lpj=67677 user_debug=31 msm_rtb.filter=0x0 ehci-hcd.park=3 coresight-etm.boot_enable=0 androidboot.hardware=geefhd
 
-TARGET_KERNEL_CONFIG := cyanogenmod_e980_defconfig
+TARGET_KERNEL_CONFIG := bliss_e980_defconfig
 
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUEDROID_VENDOR_CONF := device/lge/e980/bluetooth/vnd_gk.txt
@@ -55,3 +55,14 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/lge/gproj-common/loki
 MALLOC_IMPL := dlmalloc
 
 COMMON_GLOBAL_CFLAGS += -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
+
+# BlissPop Configs
+TARGET_TC_ROM := 4.8-linaro
+TARGET_TC_KERNEL := 4.8-linaro
+BLISSIFY := true
+BLISS_STRICT := false
+BLISS_GRAPHITE := true
+BLISS_KRAIT := true
+BLISS_PIPE := true
+TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
