@@ -36,9 +36,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
 	hostapd_default.conf \
+	wpa_supplicant_overlay.conf \
+	p2p_supplicant_overlay.conf
 
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/mixer_paths.xml:system/etc/mixer_paths.xml
+	$(LOCAL_PATH)/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/thermald-geefhd.conf:system/etc/thermald.conf
@@ -69,10 +71,10 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/ueventd.geefhd.rc:root/ueventd.geefhd.rc
 
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
+	$(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
 PRODUCT_COPY_FILES += \
-       $(LOCAL_PATH)/keypad_8064.kl:system/usr/keylayout/gk-keypad-8064.kl
+	$(LOCAL_PATH)/keypad_8064.kl:system/usr/keylayout/gk-keypad-8064.kl
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
