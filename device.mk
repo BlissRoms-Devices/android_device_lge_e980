@@ -46,6 +46,13 @@ PRODUCT_PACKAGES += \
 	wpa_supplicant_overlay.conf \
 	p2p_supplicant_overlay.conf
 
+PRODUCT_PACKAGES += \
+	libwpa_client \
+	hostapd \
+	dhcpcd.conf \
+	wpa_supplicant \
+	wpa_supplicant.conf
+	
 PRODUCT_COPY_FILES += \
 	device/lge/e980/mixer_paths.xml:system/etc/mixer_paths.xml
 	
@@ -84,8 +91,11 @@ PRODUCT_COPY_FILES += \
 # Additional Bluetooth Configs
 PRODUCT_PROPERTY_OVERRIDES += \
 	bluetooth.chip.vendor=brcm \
+	ro.bluetooth.request.master=true \
+	ro.bluetooth.remote.autoconnect=true \
+	ro.bluetooth.PANenable = 1 \
+	bluetooth.a2dp.sink.enabled=false \
 	ro.product.bluetooth=4.0 \
-	ro.bt.chipset=Broadcom BCM4334 \
 	ro.bt.version=4.0 \
 	ro.bt.stack=BTL-A \
 	ro.bt.stack.version=5.0 \
@@ -160,7 +170,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.telephony.default_network=9 \
 	telephony.lteOnGsmDevice=1 \
 	ro.telephony.ril_class=LgeLteRIL \
-	ro.telephony.ril.config=qcomdsds
+	ro.telephony.ril.config=qcomdsds \
 	rild.libpath=/system/lib/libril-qc-qmi-1.so \
 	ro.telephony.call_ring.multiple=0
 	
@@ -168,7 +178,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0 \
 	wifi.supplicant_scan_interval=15 \
-	ro.wifi.channels=13 13
+	ro.wifi.channels=13[SPACE]13
 
 # Up to 3 layers can go through overlays
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -186,15 +196,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	
 # Better internet browsing & download speed
 PRODUCT_PROPERTY_OVERRIDES += \
-	net.tcp.buffersize.default=4096,87380,256960,4096, 16384,256960 \
-	net.tcp.buffersize.wifi=4096,87380,256960,4096,163 84,256960 \
-	net.tcp.buffersize.umts=4096,87380,256960,4096,163 84,256960 \
-	net.tcp.buffersize.gprs=4096,87380,256960,4096,163 84,256960 \
-	net.tcp.buffersize.edge=4096,87380,256960,4096,163 84,256960 \
-	net.tcp.buffersize.hspa=6144,87380,524288,6144,163 84,262144 \
-	net.tcp.buffersize.lte=524288,1048576,2097152,5242 88,1048576,2097152 \
-	net.tcp.buffersize.hsdpa=6144,87380,1048576,6144,8 7380,1048576 \
-	net.tcp.buffersize.evdo_b=6144,87380,1048576,6144, 87380,1048576
+	net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960 \
+	net.tcp.buffersize.wifi=4096,87380,256960,4096,16384,256960 \
+	net.tcp.buffersize.umts=4096,87380,256960,4096,16384,256960 \
+	net.tcp.buffersize.gprs=4096,87380,256960,4096,16384,256960 \
+	net.tcp.buffersize.edge=4096,87380,256960,4096,16384,256960 \
+	net.tcp.buffersize.hspa=6144,87380,524288,6144,16384,262144 \
+	net.tcp.buffersize.lte=524288,1048576,2097152,524288,1048576,2097152 \
+	net.tcp.buffersize.hsdpa=6144,87380,1048576,6144,87380,1048576 \
+	net.tcp.buffersize.evdo_b=6144,87380,1048576,6144,87380,1048576
 	
 # Random overrides
 PRODUCT_PROPERTY_OVERRIDES += \
