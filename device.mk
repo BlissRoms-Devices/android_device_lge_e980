@@ -110,7 +110,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	service.brcm.bt.btport_redir_on=1
 
 PRODUCT_COPY_FILES += \
-	device/lge/e980/initlogo.rle:root/initlogo.rle888 \
+	device/lge/e980/initlogo-shady.rle:root/initlogo.rle888 \
+	device/lge/e980/initlogo-shady.rle:root/initlogo.rle \
 	device/lge/e980/init.geefhd.rc:root/init.geefhd.rc \
 	device/lge/e980/fstab.geefhd:root/fstab.geefhd \
 	device/lge/e980/ueventd.geefhd.rc:root/ueventd.geefhd.rc
@@ -178,7 +179,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0 \
 	wifi.supplicant_scan_interval=15 \
-	ro.wifi.channels=11 11
+	ro.wifi.channels=13[SPACE]13
 
 # Up to 3 layers can go through overlays
 PRODUCT_PROPERTY_OVERRIDES += \
