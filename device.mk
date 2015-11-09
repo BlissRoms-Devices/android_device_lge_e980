@@ -178,7 +178,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0 \
 	wifi.supplicant_scan_interval=15 \
-	ro.wifi.channels=13[SPACE]13
+	ro.wifi.channels=11 11
 
 # Up to 3 layers can go through overlays
 PRODUCT_PROPERTY_OVERRIDES += \
